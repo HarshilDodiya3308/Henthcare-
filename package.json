@@ -1,0 +1,20 @@
+{
+  "name": "ruralcare-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline-first RuralCare AI healthcare PWA prototype runnable in VS Code.",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "serve": "node scripts/serve.js",
+    "test": "node tests/smoke.test.js",
+    "zip": "node scripts/create-zip.js"
+  },
+  "keywords": [
+    "offline-first",
+    "healthcare",
+    "pwa",
+    "rural",
+    "sync"
+  ],
+  "license": "UNLICENSED"
+}

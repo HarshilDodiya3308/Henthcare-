@@ -1,0 +1,82 @@
+:root {
+  color: #123;
+  background: #eef8f6;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.app-shell {
+  max-width: 1080px;
+  margin: auto;
+  padding: 24px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  color: white;
+  background: linear-gradient(135deg, #0f766e, #0ea5a4);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 20px 60px #0f766e33;
+}
+
+.eyebrow { color: #fef3c7; font-weight: 800; }
+h1 { margin: .1rem 0; font-size: clamp(2rem, 7vw, 4rem); }
+button { border: 0; border-radius: 16px; padding: 14px 18px; font-weight: 800; cursor: pointer; }
+
+.status { color: white; background: #dc2626; }
+.status.online { background: #16a34a; }
+.secondary { margin-left: 8px; background: #e2e8f0; }
+.language-pill { font-size: .95rem; opacity: .92; }
+
+.card {
+  margin-top: 18px;
+  padding: 22px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 12px 36px #0f766e17;
+}
+
+.grid { display: grid; gap: 18px; }
+.dashboard { grid-template-columns: 2fr 1fr 1fr; margin-top: 18px; }
+.two-col { grid-template-columns: 1fr 1fr; }
+.feature { min-height: 170px; }
+.primary-feature { background: #ecfeff; border: 2px solid #99f6e4; }
+.icon { font-size: 2.4rem; }
+
+.language-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.language-grid button { background: #f1f5f9; }
+.language-grid .selected { color: white; background: #0f766e; }
+
+.chat { display: grid; gap: 10px; }
+.bubble { max-width: 78%; margin: 0; padding: 14px 16px; border-radius: 18px; }
+.bubble.ai { background: #f1f5f9; }
+.bubble.user { justify-self: end; color: white; background: #0f766e; }
+
+.triage { display: inline-block; margin-top: 10px; padding: 8px 12px; border-radius: 999px; font-weight: 900; }
+.triage.low-concern { color: #14532d; background: #dcfce7; }
+.triage.medical-review { color: #92400e; background: #fef3c7; }
+.triage.urgent { color: white; background: #dc2626; }
+
+.input-row { display: flex; gap: 10px; margin-top: 14px; }
+.input-row input { flex: 1; border: 1px solid #cbd5e1; border-radius: 16px; padding: 14px; font-size: 1rem; }
+
+.timeline, .appointment-list { padding-left: 0; list-style: none; }
+.timeline li { display: grid; gap: 4px; border-left: 4px solid #14b8a6; padding: 0 0 18px 16px; }
+.timeline em { color: #b45309; font-style: normal; font-weight: 800; }
+.notice { border-left: 5px solid #f59e0b; border-radius: 12px; padding: 12px; background: #fff7ed; }
+
+dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+dt { color: #475569; }
+dd { margin: 4px 0; font-size: 1.4rem; font-weight: 900; }
+
+@media (max-width: 780px) {
+  .dashboard, .two-col, .language-grid, dl { grid-template-columns: 1fr; }
+  .hero { align-items: flex-start; flex-direction: column; }
+  .app-shell { padding: 14px; }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <title>RuralCare AI</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">DEMO DATA — FICTIONAL</p>
+        <h1>RuralCare AI</h1>
+        <p>Healthcare, Even Without the Internet.</p><p class="language-pill">Language: <strong id="activeLanguage">English</strong></p>
+      </div>
+      <button id="connectionToggle" class="status offline" type="button">● Offline</button>
+    </header>
+
+    <section class="card onboarding" aria-labelledby="language-title">
+      <h2 id="language-title">Choose your language</h2>
+      <div class="language-grid" id="languageGrid">
+        <button data-lang="English" class="selected">English</button>
+        <button data-lang="हिंदी">हिंदी</button>
+        <button data-lang="ગુજરાતી">ગુજરાતી</button>
+        <button data-lang="ਪੰਜਾਬੀ">ਪੰਜਾਬੀ</button>
+      </div>
+    </section>
+
+    <section class="grid dashboard" aria-label="Patient dashboard">
+      <article class="card feature primary-feature">
+        <span class="icon">🎤</span>
+        <h2>Talk to Health Assistant</h2>
+        <p>Offline-safe guidance with follow-up questions and urgent-care escalation.</p>
+        <button id="askAi" type="button">Start assistant</button>
+      </article>
+      <article class="card feature"><span class="icon">🩺</span><h3>Book Doctor</h3><p>Save requests offline and sync later.</p></article>
+      <article class="card feature"><span class="icon">❤️</span><h3>My Health</h3><p>Profile, allergies, history, and emergency contact.</p></article>
+      <article class="card feature"><span class="icon">📋</span><h3>Health Records</h3><p>Vitals, prescriptions, consultations, and documents.</p></article>
+    </section>
+
+    <section class="card ai-panel" aria-live="polite">
+      <h2>AI Health Assistant</h2>
+      <div class="chat">
+        <p class="bubble ai">How are you feeling today?</p>
+        <p class="bubble user">I have fever since yesterday.</p>
+        <p id="aiReply" class="bubble ai">Please tell me how high the fever is, if you know, and whether you have other symptoms. If symptoms are serious or worsening, seek professional medical care.</p><span id="triageLevel" class="triage low-concern">Low Concern</span>
+      </div>
+      <div class="input-row">
+        <input id="healthConcern" aria-label="Health concern" value="fever since yesterday">
+        <button type="button">Send</button>
+      </div>
+    </section>
+
+    <section class="grid two-col">
+      <article class="card">
+        <h2>Health Timeline</h2>
+        <ol id="timeline" class="timeline"></ol>
+      </article>
+      <article class="card">
+        <h2>Appointment Request</h2>
+        <p>Dr. Demo Doctor · General Medicine · Gujarati/Hindi</p>
+        <button id="saveAppointment" type="button">Confirm request offline</button>
+        <p id="appointmentState" class="notice">Only server-confirmed appointments will show as confirmed.</p><ul id="appointmentList" class="appointment-list"></ul>
+      </article>
+    </section>
+
+    <section class="card sync-center">
+      <h2>Sync Center</h2>
+      <dl>
+        <div><dt>Internet</dt><dd id="internetState">OFFLINE</dd></div>
+        <div><dt>Pending records</dt><dd id="pendingCount">3</dd></div>
+        <div><dt>Current status</dt><dd id="syncState">Waiting for connection</dd></div>
+      </dl>
+      <button id="syncNow" type="button">Sync Now</button>
+      <button id="resetDemo" class="secondary" type="button">Reset Demo</button>
+    </section>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
